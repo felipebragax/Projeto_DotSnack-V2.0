@@ -57,12 +57,12 @@ Utilize a sua conta Google para efetuar o Login, ou cadastre um novo usuário.
 https://ricardoleme.github.io/crud-firebase-v9-vanilla-js/
 
 ## 📷 Imagens do Projeto
-![Login](images/telaLogin.png "Login com Usuário e Senha ou Login via Google")
-![Novo Usuário](images/telaCadastro.png "UI do Cadastro de um novo usuário (integrado ao Firebase v.9)")
-![Menu Inicial](images/telaMenu.png "UI do Menu Inicial para incluir pedidos")
-![Tela de Pedidos](images/telaPedidos.png "UI de consultas de pedidos realizados")
-![Tela de usuários](images/telaUsuarios.png "UI de usuários cadastrados")
-![Edição de cadastro](images/telaEdicao.png "UI de edição de cadastro")
+![Login](telaLogin.png "Login com Usuário e Senha ou Login via Google")
+![Novo Usuário](telaCadastro.png "UI do Cadastro de um novo usuário (integrado ao Firebase v.9)")
+![Menu Inicial](telaMenu.png "UI do Menu Inicial para incluir pedidos")
+![Tela de Pedidos](telaPedidos.png "UI de consultas de pedidos realizados")
+![Tela de usuários](telaUsuarios.png "UI de usuários cadastrados")
+![Edição de cadastro](telaEdicao.png "UI de edição de cadastro")
 
 ## 📚 Inspirações
 - https://github.com/ricardoleme/crud-firebase-v9-vanilla-js
