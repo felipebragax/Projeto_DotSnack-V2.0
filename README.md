@@ -7,7 +7,7 @@ Projeto em HTML, CSS e Vanilla Javascript que implementa um pequeno CRUD para in
 
 # 🧠 Contexto
 
-Diante de um problema ocorrido na Fatec itu sobre os pedidos da lanchonete da faculadade, os estudantes Felipe Braga, Henrique da Silva e Yasmin Cardoso criaram um pequeno sistema de pedidos para a lanchonete, utilizando apenas HTML, Java  Script, CSS e as ferramentas do Firebase, com o Authentication, Realtime Database e Firebase Storage.
+Diante de um problema ocorrido na Fatec itu sobre os pedidos da lanchonete da faculdade, os estudantes Felipe Braga, Henrique da Silva e Yasmin Cardoso criaram um pequeno sistema de pedidos para a lanchonete, utilizando apenas HTML, Java  Script, CSS e as ferramentas do Firebase: Authentication, Realtime Database e Firebase Storage.
 
 ## 📋 Instruções
 
