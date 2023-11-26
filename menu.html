@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap 5-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Ícones Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Para consultar a lista de ícones, acesse: https://icons.getbootstrap.com/ -->
+  <!-- CSS -->
+  <link href="css/estilo.css" rel="stylesheet" />
+  <link href="images/dotsnack.png" rel="icon" type="image/png" />
+  <title>Menu Principal</title>
+</head>
+
+<body onload="verificaLogado()">
+
+  <nav class="navbar navbar-expand-lg navbar-dark menu">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="images/dotsnack.png" class="rounded-circle img-thumbnail img-fluid shadow-lg mx-3 imgg border-dark "
+          width="70">
+        </i>
+      </a>
+      <div class="navbar-icon text-light ">
+        <i class="bi bi-geo-alt-fill"></i> Fatec Itu
+      </div>
+      <div class="collapse navbar-collapse " id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active " aria-current="page" href="#"><i class="bi bi-house-fill"></i> Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="consulta.html"> <i class="bi bi-cart4"></i></i> Consultar Pedidos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="consultaUsuario.html"><i class="bi bi-file-person"></i> Consultar
+              Usuários</a>
+          </li>
+
+        </ul>
+
+        <div class="minhaImagem" id="imagemUsuario"></div>
+        <form class="d-flex m-3">
+          <button class="btn btn-outline-danger btn-sm " type="button" onclick="logoutFirebase()"> <i
+              class="bi bi-box-arrow-right"></i> Sair da Conta</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- Menu inicial-->
+  <div class="container">
+    <h5 class="text-sucess mt-4 text-center"> Seja bem vindo a DotSnack! Seu site de pedidos da Fatec Itu
+    </h5>
+    <div class="row mt-4">
+
+      <div class="col-md-7">
+        <div class="card mb-3 ">
+
+          <img class="card-img-top" src="/images/produtos.jpg" alt="Imagem de capa do card"
+            title="Produtos" width="100" height="290">
+
+          <div class="card-body">
+            <h5 class="card-"><small class="text-muted">Bem vindo ao Menu! Abaixo a lista de produtos</small></h5>
+            <h3 class="text-center mt-3 text-danger">
+              Realize seu pedido <i class="bi bi-card-list"></i>
+            </h3>
+            <div>
+              <h3 class="produto">Lanches</h3>
+            </div>
+            <table class="table table-striped table-bordered table-sm table-hover text-center">
+              <thead>
+                <tr class="table-warning ">
+                  <th>Nome</th>
+                  <th>Ingredientes</th>
+                  <th>Preço(R$)</th>
+                  <th>Opções</th>
+                </tr>
+                <tr class="produto">
+                  <td> X-Burguer</td>
+                  <td>Hambuguer com queijo Prato</td>
+                  <td class="preco-produto">7,50</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success btn-add-produto">
+                          <i class="bi bi-plus-circle"></i>
+                        </button>
+                      </div>
+                      <div class="col"><input type="number" class="form-control quant-produto" min="1" max="5"
+                          step="any" required placeholder="Quantidade" title="Informe a quantidade" />
+                      </div>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr class="produto">
+                  <td> X-Salada</td>
+                  <td>Hambuguer, Queijo, Alface e Tomate</td>
+                  <td class="preco-produto">8,50</td>
+                  <td>
+                    <div class=row>
+                      <div class="col">
+                        <button class="btn btn-success btn-add-produto"><i class="bi bi-plus-circle"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="any" required
+                          placeholder="Quant" title="Informe a quantidade" />
+                      </div>
+                    </div>
+
+                  </td>
+                </tr>
+
+                <tr class="produto">
+                  <td> X-EGG</td>
+                  <td>Hambuguer, Ovo e Queijo</td>
+                  <td class="preco-produto">8,50</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="any" required
+                          placeholder="Quant" title="Informe a quantidade" checked="1" />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="produto">
+                  <td> X-Bacon</td>
+                  <td>Hambuguer, Queijo e Bacon</td>
+                  <td class="preco">8,50</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="any" required
+                          placeholder="Quant" title="Informe a quantidade" />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="produto">
+                  <td> X-Cheddar</td>
+                  <td>Hambuguer, Queijo e Molho Cheddar</td>
+                  <td class="preco">9,50</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="any" required
+                          placeholder="Quant" title="Informe a quantidade" />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="produto">
+                  <td> X-Tudo</td>
+                  <td>Hambuguer, Queijo, Presunto, Ovo, Alface, Tomate e Bacon</td>
+                  <td class="preco-produto">13,50</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="any" required
+                          placeholder="Quant" title="Informe a quantidade" />
+                      </div>
+                    </div>
+
+                  </td>
+                </tr>
+
+
+
+              </thead>
+              <tbody id="dadosTabela"></tbody>
+            </table>
+            <h3>Salgados</h3>
+            <table id="dadosSalgados" class="table table-bordered table-sm text-center">
+              <thead>
+                <tr class="table-success">
+                  <th>Nome</th>
+                  <th>Ingredientes</th>
+                  <th>Preço(R$)</th>
+                  <th>Opções</th>
+                </tr>
+                <tr class="produto">
+                  <td> Pastel Carne Moída</td>
+                  <td>Carne moída, tomate e salsinha</td>
+                  <td class="preco-produto">6,00</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="any" required
+                          placeholder="Quant" title="Informe a quantidade" />
+                      </div>
+                    </div>
+
+                    </button>
+                  </td>
+                </tr>
+                <tr class="produto">
+                  <td> Pastel Queijo Minas</td>
+                  <td>Queijo de Minas e Orégano</td>
+                  <td class="preco">6,00</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="any" required
+                          placeholder="Quant" title="Informe a quantidade" />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="produto">
+                  <td> Pastel Camarão</td>
+                  <td>Camarão, tomate e pimentão</td>
+                  <td class="preco-produto">8,00</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="any" required
+                          placeholder="Quant" title="Informe a quantidade" />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="produto">
+                  <td>Coxinha</td>
+                  <td>Frango desfiado, salsinha e catupiry</td>
+                  <td class="preco-produto">7,00</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="any" required
+                          placeholder="Quant" title="Informe a quantidade" />
+                      </div>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr class="produto">
+                  <td> Risóles de Presunto e Queijo</td>
+                  <td>Presunto, muçarela e orégano</td>
+                  <td class="preco-produto">7,00</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="any" required
+                          placeholder="Quant" title="Informe a quantidade" />
+                      </div>
+                    </div>
+
+                  </td>
+
+                </tr>
+              </thead>
+              <tbody id="dadosTabela"></tbody>
+            </table>
+            <h3 class="">Bebidas</h3>
+            <table id="dadosBebidas" class="table table-bordered table-sm text-center">
+              <thead>
+                <tr class="table-info ">
+                  <th>Nome</th>
+                  <th>Volume</th>
+                  <th>Preço(R$)</th>
+                  <th>Opções</th>
+                </tr>
+                <tr class="produto">
+                  <td> Água S/ Gás</td>
+                  <td>300ml</td>
+                  <td class="preco">4,90</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="any" required
+                          placeholder="Quant" title="Informe a quantidade" />
+                      </div>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr class="produto">
+                  <td> Água C/ Gás</td>
+                  <td>300ml</td>
+                  <td class="preco">5,90</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="any" required
+                          placeholder="Quant" title="Informe a quantidade" />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="produto">
+                  <td> Refrigerante</td>
+                  <td>300ml</td>
+                  <td class="preco">6,00</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="any" required
+                          placeholder="Quant" title="Informe a quantidade" />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="produto">
+                  <td> Refrigerante</td>
+                  <td>600ml</td>
+                  <td class="preco">6,90</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="any" required
+                          placeholder="Quant" title="Informe a quantidade" />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="produto">
+                  <td> Refrigerante</td>
+                  <td>1,5L</td>
+                  <td class="preco">8,90</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="any" required
+                          placeholder="Quant" title="Informe a quantidade" />
+                      </div>
+                    </div>
+
+
+                  </td>
+                </tr>
+                <tr class="produto">
+                  <td> Suco Natural</td>
+                  <td>900ml</td>
+                  <td class="preco">9,90</td>
+                  <td>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-success"><i class="bi bi-plus-circle"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="number" class="form-control quant-produto" min="1" max="5" step="1" required
+                          placeholder="Quant" title="Informe a quantidade" />
+                      </div>
+                    </div>
+
+
+                  </td>
+                </tr>
+              </thead>
+              <tbody id="dadosTabela"></tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-1 "></div>
+
+      <div class="col-md-4">
+        <div class="card mb-3">
+          <img class="card-img-top" src="/images/seusPedido.jpg" alt="Imagem de capa do card" title="Seu pedido">
+          <div class="card-body">
+            <h5>
+              <p class="card-text"><small class="text-muted">Seu carrinho de compras:</small></p>
+            </h5>
+            <h4 class=" text-center mt-3 text-success-emphasis">Seu pedido <i class="bi bi-cart-plus-fill"></i></h4>
+            <table class="table table-bordered table-sm" id="tabelaPedido">
+              <thead>
+                <tr class="table-success text-center">
+                  <th id="nomee">Nome</th>
+                  <th id="preco">Preço(R$)</th>
+                  <th id="quantid">Quantidade</th>
+                  <th>Opções</th>
+                </tr>
+              </thead>
+              <tbody id="dadosTabela"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Rodapé-->
+
+  <!-- Carregando os scripts do Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-storage-compat.js"></script>
+  <!--script do projeto -->
+  <script src="js/firebase.js"></script>
+  <script src="js/addPedido.js"></script>
+
+</body>
+
+</html>
