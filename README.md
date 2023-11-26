@@ -54,7 +54,7 @@ Estas regras garantem que cada usuário só tenha acesso aos arquivos armazenado
 
 Utilize a sua conta Google para efetuar o Login, ou cadastre um novo usuário.
 
-https://ricardoleme.github.io/crud-firebase-v9-vanilla-js/
+https://felipebragax.github.io/Projeto_DotSnack-V2.0/
 
 ## 📷 Imagens do Projeto
 ![Login](telaLogin.png "Login com Usuário e Senha ou Login via Google")
