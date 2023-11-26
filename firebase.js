@@ -167,7 +167,7 @@ function verificaLogado() {
                     if (user.photoURL) {
                         imagem.innerHTML += `<img src="${user.photoURL}" title="${user.displayName}" class="img rounded-circle minhaImagem" width="35" height="35"/>`;
                     } else {
-                        imagem.innerHTML += `<img src="images/logo-google.svg" title="${user.displayName}" class="img rounded-circle minhaImagem" height="35" width="35"/>`;
+                        imagem.innerHTML += `<img src="logo-google.svg" title="${user.displayName}" class="img rounded-circle minhaImagem" height="35" width="35"/>`;
                     }
                 } else {
                     // Se não for um login por provedor de terceiros, busca os dados do usuário no banco de dados
@@ -182,7 +182,7 @@ function verificaLogado() {
                             if (fotoUsuario) {
                                 imagem.innerHTML += `<img src="${fotoUsuario}" title="${nomeUsuario}" class="img rounded-circle minhaImagem" height="35" width="35"/>`;
                             } else {
-                                imagem.innerHTML += `<img src="images/logo-google.svg" title="${nomeUsuario}" class="img rounded-circle minhaImagem" height="35" width="35"/>`;
+                                imagem.innerHTML += `<img src="logo-google.svg" title="${nomeUsuario}" class="img rounded-circle minhaImagem" height="35" width="35"/>`;
                             }
                         }
                     }).catch(error => {
